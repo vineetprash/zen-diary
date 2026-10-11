@@ -2,22 +2,21 @@ name: Release APK
 
 on:
   push:
-    branches: [main]
-    paths-ignore: ["**.md", "docs/**"]
+    tags: ["v*"]
 
 permissions:
   contents: write
 
-concurrency:
-  group: release
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      VERSION_CODE: ${{ github.run_number }}
-      VERSION_NAME: 1.0.${{ github.run_number }}
+    steps:
+      - name: Version from tag
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          IFS=. read -r MA MI PA <<< "$TAG"
+          echo "VERSION_NAME=$TAG" >> $GITHUB_ENV
+          echo "VERSION_CODE=$((MA*10000 + MI*100 + PA))" >> $GITHUB_ENV
     steps:
       - uses: actions/checkout@v4
 
