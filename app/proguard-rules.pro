@@ -1,0 +1,3 @@
+-keep class net.zetetic.database.** { *; }
+-keep class app.zendiary.data.db.** { *; }
+-dontwarn javax.annotation.**

@@ -1,0 +1,6 @@
+<resources>
+    <color name="ic_launcher_background">#6B8F71</color>
+    <color name="zen_bg">#F7F5EF</color>
+    <color name="widget_bg">#F7F5EF</color>
+    <color name="widget_text">#2B332D</color>
+</resources>
