@@ -41,7 +41,6 @@ Single Gradle module, package-per-layer/feature, manual DI in `AppContainer`.
 
 ## Known limits / honest notes
 - Daylio `.daylio` layout is undocumented; the importer follows the community-known layout (ZIP -> Base64 JSON,
-  photos under `assets/`) and reports anything it can't match. Test with your own export and tell me what differs.
-- PDFs from other apps can't be imported (PDF has no structured data).
+  photos under `assets/`) and reports anything it can't match. 
+- PDFs from other apps can't be imported
 - UI strings are inline in Kotlin, not yet in `strings.xml` (localization pending).
-- Widget logs mood for today in one tap; period tracker predictions are simple averages, not medical advice.
